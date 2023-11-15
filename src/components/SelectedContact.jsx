@@ -25,6 +25,7 @@ export default function SelectedContact({
       <p>Selected Contact is {contact?.name}</p>
       <p>Email: {contact?.email}</p>
       <p>Phone: {contact?.phone}</p>
+      <p>Website: {contact?.website}</p>
       <button onClick={() => setSelectedContactId(null)}>Close</button>
     </div>
   );
