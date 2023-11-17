@@ -25,26 +25,51 @@ export default function ContactList({ setSelectedContactId }) {
     fetchContacts();
   }, []);
   return (
-    <table>
-      <thead>
-        <tr>
-          <th colSpan="3">Contact List</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Name</td>
-          <td>Email</td>
-          <td>Phone</td>
-        </tr>
-        {contacts.map((contact) => (
-          <ContactRow
-            contact={contact}
-            setSelectedContactId={setSelectedContactId}
-            key={contact.id}
-          />
-        ))}
-      </tbody>
-    </table>
+    // <table>
+    //   <thead>
+    //     <tr>
+    //       <div className="table-header">
+    //         <th colSpan="3">Contact List</th>
+    //       </div>
+    //     </tr>
+    //   </thead>
+    //   <tbody>
+    //     <tr>
+    //       <td>Name</td>
+    //       <td>Email</td>
+    //       <td>Phone</td>
+    //     </tr>
+    //     {contacts.map((contact) => (
+    //       <ContactRow
+    //         contact={contact}
+    //         setSelectedContactId={setSelectedContactId}
+    //         key={contact.id}
+    //       />
+    //     ))}
+    //   </tbody>
+    // </table>
+    <div className="table">
+      <div className="table-header">
+        <th colSpan="3">Contact List</th>
+      </div>
+      <table>
+        <thead>
+          <tbody>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+            </tr>
+            {contacts.map((contact) => (
+              <ContactRow
+                contact={contact}
+                setSelectedContactId={setSelectedContactId}
+                key={contact.id}
+              />
+            ))}
+          </tbody>
+        </thead>
+      </table>
+    </div>
   );
 }
