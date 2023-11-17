@@ -21,12 +21,24 @@ export default function SelectedContact({
     fetchSingleContact(SelectedContactId);
   }, []);
   return (
-    <div>
-      <p>Selected Contact is {contact?.name}</p>
-      <p>Email: {contact?.email}</p>
-      <p>Phone: {contact?.phone}</p>
-      <p>Website: {contact?.website}</p>
-      <button onClick={() => setSelectedContactId(null)}>Close</button>
-    </div>
+    <tbody>
+      <div className="table-body">
+        <td>
+          <strong>Selected Contact is {contact?.name}</strong>
+        </td>
+        <td>
+          <strong>Email: {contact?.email}</strong>
+        </td>
+        <td>
+          <strong>Phone: {contact?.phone}</strong>
+        </td>
+        <td>
+          <strong>Website: {contact?.website}</strong>
+        </td>
+        <div className="data-button">
+          <button onClick={() => setSelectedContactId(null)}>Close</button>
+        </div>
+      </div>
+    </tbody>
   );
 }
